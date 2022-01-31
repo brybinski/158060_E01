@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ArrayUtil {
+
+    //może implementować comparable, ale nie musi :)
     public static <T> ArrayList<T> removeRepeatedElements(ArrayList<T> arr){
         ArrayList<T> result = new ArrayList<>();
         for(T i: arr){
