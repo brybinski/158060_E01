@@ -5,11 +5,17 @@ import java.util.stream.Stream;
 
 public class Z2 {
     public static <E> void printWithSemicolon(Iterable<E> toprint){
+
+
         StringBuffer buf = new StringBuffer();
+
+        //średnik na początku
+        //buf.append(';');
         toprint.forEach(i -> buf.append(';').append(i.toString()));
 
+        //średnik na końcu
         buf.append(';');
-        //buf.length()-1 jeśli bez średnika na końcu
+
         System.out.println(buf.substring(1,buf.length()).toString());
     }
 
@@ -17,10 +23,12 @@ public class Z2 {
         ArrayList<Character> chr = new ArrayList<>(List.of(new Character[]{'f', 'f', 'g'}));
         LinkedList<Integer> ll = new LinkedList<>();
         Stream.iterate(0,i -> i).limit(10).forEach(ll::push);
+        TreeSet<Character> ts = new TreeSet<Character>(chr);
+        Vector<Character> vc = new Vector<>();
 
         printWithSemicolon(chr);
         printWithSemicolon(ll);
-        printWithSemicolon(new TreeSet<Character>(chr));
-        printWithSemicolon(new HashSet<Character>(chr));
+        printWithSemicolon(ts);
+        printWithSemicolon(vc);
     }
 }
